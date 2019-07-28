@@ -1,0 +1,31 @@
+{
+  "name": "Typo-Free Twitter",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Prevents typos by asking you to double-check the content before posting a long tweet",
+  "permissions": ["declarativeContent", "storage"],
+  "background": { "persistent": false, "scripts": ["background.js"] },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "matches": ["https://twitter.com/*"]
+    }
+  ],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/logo16.png",
+      "32": "images/logo32.png",
+      "48": "images/logo48.png",
+      "128": "images/logo128.png"
+    }
+  },
+  "icons": {
+    "16": "images/logo16.png",
+    "32": "images/logo32.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
+  }
+}
